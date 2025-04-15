@@ -1,0 +1,113 @@
+section.login {
+  background-image: url("/images/login_img.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  .login_top {
+    position: absolute;
+    top: 40px;
+    h4 {
+      background: #ffffff2b;
+      padding: 10px 38px;
+      border-radius: 9px;
+      backdrop-filter: blur(57px);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      a {
+        color: #017bec;
+      }
+    }
+  }
+  .login_form {
+    background: #ffffff0f;
+    border: 1px solid #ffffff33;
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(100px);
+    .input_box{
+      padding: 8px 25px;
+      border-radius: 4px;
+      border: 1px solid #363636;
+      background: #ffffff14;
+      &:focus-visible{
+        outline: unset !important;
+      }
+    }
+    input{
+      color: #626262;
+      font-size: 16px;
+      font-weight: 300;
+      &:focus-visible{
+        outline: unset !important;
+      }
+    }
+    svg{
+      color: #626262;
+      width: 20px;
+      height: 20px;
+    }
+    h4 {
+      color: #017bec;
+      font-size: 29px;
+      font-weight: 700;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    a {
+      color: #e13434;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .login_spc {
+      padding-top: 25px;
+    }
+    .form_btn {
+      margin-top: 60px;
+      a {
+        font-size: 20px;
+        font-weight: 300;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+// MEDIA QUERY
+
+@media (min-width: 320px) and (max-width: 767px) {
+  section.login {
+    .login_top {
+      h4 {
+        padding: 10px 25px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 991px) {
+  section.login {
+    .login_form {
+      padding: 20px 15px;
+
+      h4 {
+        font-size: 22px;
+        margin: 30px 0;
+      }
+      .form_btn {
+        margin-top: 25px;
+        a {
+          font-size: 14px;
+          padding: 5px 20px !important;
+        }
+      }
+    }
+  }
+}
+
+// MEDIA QUERY

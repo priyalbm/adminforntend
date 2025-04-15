@@ -1,0 +1,59 @@
+.chips-input-container {
+  width: 100%;
+}
+
+.chips-input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  background: #000;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  padding: 6px 20px;
+  background-color: #151517;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+}
+
+.chip-delete {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-left: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.chip-delete:hover {
+  color: #fff;
+}
+
+.chips-input {
+  flex: 1;
+  border: none !important;
+  outline: none !important;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  background: transparent !important;
+}
+
+.chips-input::placeholder {
+  color: #fff;
+}
+
+textarea.form-control {
+  min-height: 250px !important;
+}

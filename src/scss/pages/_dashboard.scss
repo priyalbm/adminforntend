@@ -1,0 +1,714 @@
+// Table CSS START
+.table > :not(caption) > * > * {
+  background-color: unset !important;
+  border: unset;
+}
+.table > thead {
+  background-color: #070707 !important;
+}
+table {
+  vertical-align: middle;
+}
+.table > thead th,
+td {
+  color: #fff !important;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 300;
+}
+.resize_area {
+  resize: both;
+}
+table td {
+  padding: 16px 15px 15px 30px !important;
+}
+table th {
+  padding: 15px 15px 15px 30px !important;
+}
+.items_list {
+  select {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>')
+      no-repeat right 5px center !important;
+    width: fit-content;
+    border: unset !important;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 22px 0 5px;
+    &:focus-visible {
+      outline: unset !important;
+      box-shadow: unset !important;
+    }
+  }
+}
+.action_btn {
+  gap: 10px;
+  a {
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+    &.bg_grn {
+      background: #c6ffc6;
+      svg {
+        color: #2abd2a;
+      }
+    }
+    &.bg_blu {
+      background: #deefff;
+      svg {
+        color: #017bec;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0 !important;
+  align-items: center;
+  li {
+    a {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+    }
+    &.active {
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      padding-left: 0 !important;
+      display: flex;
+      align-items: center;
+    }
+    &:before {
+      color: #fff !important;
+      font-size: 16px;
+      padding-right: 0 !important;
+    }
+  }
+}
+/* LogoutMODAL CSS START  */
+
+.logout_modal .modal-content {
+  background-color: #151517;
+  border: 1px solid #353535;
+  padding: 25px;
+  box-shadow: 0 0 10px 1px #0000000d;
+}
+
+.logout_modal .modal-footer button {
+  font-size: 20px;
+  width: 211px;
+  border-radius: 60px;
+}
+.logout_modal .modal-header {
+  border-bottom: unset !important;
+}
+.logout_modal .modal-body {
+  h4 {
+    font-size: 29px;
+    font-weight: 400;
+    padding: 28px 0;
+  }
+}
+.logout_modal .modal-footer {
+  border-top: unset !important;
+}
+.logout_modal .btn-close {
+  opacity: 1;
+  filter: invert(1);
+}
+
+/* LogoutMODAL CSS END  */
+
+// Dashboard Css Start
+
+.home {
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .first_box {
+    h6 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+    }
+    .box_data {
+      gap: 20px;
+      margin-top: 35px;
+      span {
+        color: #626262;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+  .down_box {
+    h3,
+    h4 {
+      font-weight: 500;
+      color: #fff;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    select {
+      padding: 10px 25px 10px 18px;
+      border-radius: 20px;
+      border: unset !important;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      background: #626262
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>')
+        no-repeat right 12px center;
+      &:focus-visible {
+        outline: unset !important;
+        box-shadow: unset !important;
+      }
+    }
+    .chart_data {
+      margin-top: 30px;
+    }
+  }
+  .center_box {
+    .box_img {
+      width: 60px;
+      height: 60px;
+      background: #017bec;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    p {
+      color: #626262;
+      font-weight: 600;
+      margin: 10px 0 5px;
+    }
+    h6 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+  .center_down {
+    h3 {
+      padding: 30px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    ul {
+      li {
+        gap: 20px;
+        border-bottom: 1px solid #363636;
+        padding: 10px 30px 20px;
+        p {
+          margin-bottom: 10px;
+          font-size: 17px;
+          font-weight: 500;
+          color: #fff;
+        }
+        .activity_box {
+          gap: 10px;
+          .activity_log {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            span {
+              color: #626262;
+              font-size: 16px;
+              font-weight: 600;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+              color: #626262;
+            }
+          }
+        }
+        &:last-child {
+          border-bottom: unset;
+        }
+        &:first-child {
+          padding-top: 7px;
+        }
+      }
+    }
+  }
+  .google_links {
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 26px;
+    }
+  }
+  .dashboard_head {
+    padding: 30px;
+    h5 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0 !important;
+    }
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #017bec;
+    }
+  }
+}
+
+// SUBSCRIPTION_PAYMENT CSS START
+
+.sub_box {
+  padding: 25px !important;
+}
+.pay_box {
+  background: #000;
+  overflow: hidden;
+  z-index: 0;
+  &::before {
+    content: "";
+    background: #017bec;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    filter: blur(85px);
+  }
+  .box_img {
+    width: 60px;
+    height: 60px;
+    background: #017bec;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  p {
+    color: #626262;
+    font-weight: 600;
+    margin: 10px 0 5px;
+  }
+  h6 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+// SUBSCRIPTION_PAYMENT CSS END
+
+// USER_DETAIL CSS START
+
+.dashboard_head {
+  margin-bottom: 30px;
+  h5 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+section.user {
+  .dashboard_head {
+    padding: 30px;
+  }
+  .user_data {
+    gap: 10px;
+    h6 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      font-style: italic;
+    }
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      text-wrap: nowrap;
+    }
+  }
+  .user_btn {
+    select {
+      padding: 10px 25px 10px 18px;
+      border-radius: 20px;
+      border: unset !important;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      background: #017bec
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>')
+        no-repeat right 12px center;
+      &:focus-visible {
+        outline: unset !important;
+        box-shadow: unset !important;
+      }
+    }
+  }
+  .center_down {
+    h3 {
+      padding: 30px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    ul {
+      li {
+        gap: 20px;
+        border-bottom: 1px solid #363636;
+        padding: 10px 30px 20px;
+        p {
+          margin-bottom: 10px;
+          font-size: 17px;
+          font-weight: 500;
+          color: #fff;
+        }
+        .activity_box {
+          gap: 10px;
+          .activity_log {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            span {
+              color: #626262;
+              font-size: 16px;
+              font-weight: 600;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+              color: #626262;
+            }
+          }
+        }
+        &:last-child {
+          border-bottom: unset;
+        }
+        &:first-child {
+          padding-top: 7px;
+        }
+      }
+    }
+  }
+}
+
+// USER_DETAIL CSS END
+
+// PRICING_PLAN CSS START
+
+.plan_btm {
+  padding-bottom: 116px;
+}
+section.plan {
+  .plan_box {
+    color: #fff;
+    .plan_top {
+      border-bottom: 1px solid #272525;
+      padding: 30px 25px 20px;
+      h5 {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      p {
+        color: #626262;
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 30px;
+        font-weight: 800;
+        sub {
+          font-size: 18px;
+          font-weight: 300;
+        }
+      }
+    }
+    .plan_down {
+      padding: 20px 25px 30px;
+      h6 {
+        font-size: 18px;
+        font-weight: 500;
+        color: #017bec;
+        margin-bottom: 10px;
+      }
+      ul {
+        li {
+          font-size: 14px;
+          font-weight: 300;
+          list-style: decimal;
+          margin-bottom: 15px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .plan_btn {
+        margin-top: 26px;
+      }
+    }
+  }
+  .add_btn {
+    margin-top: 50px;
+  }
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+  }
+  input[type="checkbox"]:checked {
+    background-color: transparent;
+  }
+}
+
+// PRICING_PLAN CSS END
+
+// PROFILE CSS START
+
+section.profile {
+  .pro_back {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .profile_data {
+    .pro_head {
+      margin: 40px 0 30px;
+      h6 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: underline;
+        margin: 0;
+      }
+    }
+    span {
+      color: #626262;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    p {
+      font-weight: 500;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 0;
+    }
+    .pro_spc {
+      margin-bottom: 50px;
+    }
+    a {
+      width: 26px;
+      height: 26px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #deefff;
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+// PROFILE CSS END
+
+// SUPPORT CSS START
+
+.support {
+  .chat_head {
+    padding: 30px;
+  }
+  .chat_box {
+    padding: 30px;
+  }
+  .chat_spc {
+    margin-bottom: 40px;
+  }
+  h6 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 17px;
+  }
+  .ticket_box {
+    border-radius: 30px 1px 1px 1px;
+    background: #000000;
+    border: 1px solid #363636;
+    padding: 18px 22px;
+    p {
+      font-weight: 300;
+      color: #fff;
+    }
+  }
+  .input_parent {
+    margin-top: 50px;
+    input {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 1px;
+      color: #fff;
+      padding: 20px 100px 20px 25px;
+      background-color: #017bec;
+      border-radius: 0 0 20px 20px;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    div {
+      position: absolute;
+      right: 21px;
+      top: 50%;
+      transform: translate(0, -50%);
+      svg {
+        font-size: 30px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// SUPPORT CSS END
+
+// NOTIFICATION CSS START
+
+.notification_box {
+  margin-top: 20px;
+  .notify_data {
+    border: 1px solid #363636;
+    background: #070707;
+    border-radius: 20px;
+    padding: 24px 30px;
+    .form-check-input {
+      width: 49px;
+      height: 22px;
+    }
+    label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 12px !important;
+      font-weight: 400;
+      color: #fff;
+    }
+  }
+
+  .form-switch .form-check-input {
+    background-color: #fff;
+    background-repeat: no-repeat;
+  }
+  .form-check-input:checked {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+  }
+}
+
+// NOTIFICATION CSS END
+
+// USER_SLIDER CSS START
+
+.user_slider {
+  background: #fff;
+  padding: 20px;
+  border-radius: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  h4,
+  h6 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  h6 {
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #626262;
+    margin-bottom: 25px;
+  }
+  img {
+    margin: 16px 0 9px;
+  }
+
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: auto;
+    width: 100%;
+    bottom: -5px !important;
+  }
+  span.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px !important;
+  }
+  .swiper-pagination-bullet-active {
+    width: 36px !important;
+    height: 10px !important;
+    border-radius: 5px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 23px;
+    left: auto !important;
+    z-index: 100000000000000000 !important;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background: #dddddd;
+  }
+  .swiper-button-next {
+    right: 0 !important;
+  }
+  .swiper-button-prev {
+    right: 25px !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 9px !important;
+    font-weight: 900;
+    color: #000;
+  }
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    display: none !important;
+  }
+}
+
+// USER_SLIDER CSS END

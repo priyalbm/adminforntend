@@ -1,0 +1,37 @@
+.pagination-container {
+  span {
+    color: #626262;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.pagination-button {
+  border: none;
+  color: #fff;
+  background: unset !important;
+  margin: 0 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.pagination-button:hover {
+  background-color: #e5e5e5;
+  color: #fff;
+}
+
+.pagination-button.active {
+  background-color: unset !important;
+  color: #017bec;
+}
+
+.pagination-ellipsis {
+  margin: 0 5px;
+  color: #f0f0f0;
+}
