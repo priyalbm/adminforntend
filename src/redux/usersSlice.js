@@ -84,6 +84,8 @@ export const updateUsers = createAsyncThunk(
     }
   }
 );
+
+
 const initialState = {
   allusers: null,
   count: null,
@@ -119,6 +121,7 @@ const usersSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload || 'Error in fetching users';
       })
+      
       // # single user fetching
       .addCase(fetchSingleUsers.pending, (state) => {
         state.isLoading = true;

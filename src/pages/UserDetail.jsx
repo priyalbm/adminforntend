@@ -4,15 +4,17 @@ import { MdDateRange, MdOutlineAccessTime } from "react-icons/md";
 import { fetchSingleUsers } from "../redux/usersSlice";
 import { useDispatch,useSelector } from "react-redux";
 import { useParams } from "react-router-dom"; // Using useParams to get the id
+import { fetchAllSubscription } from "../redux/subscriptionSlice";
 
 export const UserDetail = () => {
   const { id } = useParams();
   const dispatch =useDispatch()
   const {singleuser,isLoading}=useSelector((state)=>state.users)
-
+  const { allsubscriptions } = useSelector((state) => state.subscriptions);
   useEffect(() => {
     if (id) {
-      dispatch(fetchSingleUsers(id)); // Fetch the user based on the id
+      dispatch(fetchSingleUsers(id)); 
+    dispatch(fetchAllSubscription({ page: 1, limit:5,searchQuery:'',user_id:Number(id) }));
     }
   }, [id, dispatch]);
 
@@ -46,118 +48,6 @@ export const UserDetail = () => {
       head: "Swati purchased bot",
       txt: "17-03-2025",
       txt1: "12:30 PM",
-    },
-  ];
-  const tableData = [
-    {
-      num: "1",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
-    },
-    {
-      num: "2",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Failed",
-      addcls: "red",
-    },
-    {
-      num: "3",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
-    },
-    {
-      num: "4",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Failed",
-      addcls: "red",
-    },
-    {
-      num: "5",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
-    },
-    {
-      num: "6",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Failed",
-      addcls: "red",
-    },
-    {
-      num: "7",
-      tdate: "16-01-2025",
-      edate: "16-01-2025",
-      type: "Basic",
-      price: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
-    },
-  ];
-  const usertableData = [
-    {
-      num: "1",
-      name: "Demoname",
-      email: "demoname@yopmail.com",
-      date: "16-01-2025 12:48 PM",
-      amt: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
-    },
-    {
-      num: "2",
-      name: "Demoname",
-      email: "demoname@yopmail.com",
-      date: "16-01-2025 12:48 PM",
-      amt: "$ 1,000",
-      status: "Failed",
-      addcls: "red",
-    },
-    {
-      num: "3",
-      name: "Demoname",
-      email: "demoname@yopmail.com",
-      date: "16-01-2025 12:48 PM",
-      amt: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
-    },
-    {
-      num: "4",
-      name: "Demoname",
-      email: "demoname@yopmail.com",
-      date: "16-01-2025 12:48 PM",
-      amt: "$ 1,000",
-      status: "Failed",
-      addcls: "red",
-    },
-    {
-      num: "5",
-      name: "Demoname",
-      email: "demoname@yopmail.com",
-      date: "16-01-2025 12:48 PM",
-      amt: "$ 1,000",
-      status: "Successful",
-      addcls: "green",
     },
   ];
 
@@ -239,13 +129,13 @@ export const UserDetail = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {tableData.map((data, i) => (
+                      {(allsubscriptions)?.slice(0,5)?.map((data, i) => (
                         <tr key={i}>
-                          <td>{data.num}</td>
-                          <td>{data.tdate}</td>
-                          <td>{data.edate}</td>
-                          <td>{data.type}</td>
-                          <td>{data.price}</td>
+                          <td>{i+1}</td>
+                          <td>{data.start_date}</td>
+                          <td>{data.end_date}</td>
+                          <td>{data.plan.name}</td>
+                          <td>{data.plan.price}</td>
                           <td className={`${data.addcls}`}>{data.status}</td>
                         </tr>
                       ))}
@@ -271,22 +161,22 @@ export const UserDetail = () => {
                     <thead className="gry">
                       <tr className="">
                         <th>Sr. No.</th>
-                        <th>Name</th>
-                        <th>Email Address</th>
+                        <th>ID</th>
+                        <th>Currency</th>
                         <th>Transaction Date</th>
                         <th>Amount</th>
                         <th>Status</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {usertableData.map((data, i) => (
+                      {allsubscriptions?.map((data, i) => (
                         <tr key={i}>
-                          <td>{data.num}</td>
-                          <td>{data.name}</td>
-                          <td>{data.email}</td>
-                          <td>{data.date}</td>
-                          <td>{data.amt}</td>
-                          <td className={`${data.addcls}`}>{data.status}</td>
+                          <td>{i+1}</td>
+                          <td>{data.transactions?.[0]?.razorpay_payment_id}</td>
+                          <td>{data.transactions?.[0]?.currency}</td>
+                          <td>{data.transactions?.[0]?.transaction_date}</td>
+                          <td>{data.transactions?.[0]?.amount}</td>
+                          <td className={`${data.addcls}`}>{data.transactions?.[0]?.status}</td>
                         </tr>
                       ))}
                     </tbody>

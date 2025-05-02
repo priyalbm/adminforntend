@@ -80,9 +80,9 @@ export const BotsManagement = () => {
                           {allbots?.map((data, i) => (
                             <tr key={i}>
                               <td>{(currentSearchPage - 1) * limit + i + 1}</td>
-                              <td>{data?.user?.username}</td>
+                              <td>{data?.user_name}</td>
                               <td>{data?.exchange_name}</td>
-                              <td>{data?.trading_pair_symbol}</td>
+                              <td>{data?.pair_symbol}</td>
                               <td>{data?.trade_volume}</td>
                               <td>{data?.risk_tolerance}</td>
                               <td>

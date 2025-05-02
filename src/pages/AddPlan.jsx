@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearError, clearMessage, createplan } from "../redux/planSlice";
+import { fetchAllExchange } from "../redux/botSlice"; // 👈 import fetchAllExchange
 import DashboardLayout from "../layouts/DashboardLayout";
 import Chips from "../components/Chips";
 import { ToastContainer, toast } from "react-toastify";
@@ -13,10 +14,14 @@ export const AddPlan = () => {
   const [planDuration, setPlanDuration] = useState("quarterly");
   const [isPromoChecked, setIsPromoChecked] = useState(false);
   const [features, setFeatures] = useState([]);
+  const [selectedExchange, setSelectedExchange] = useState(""); // 👈 for selected exchange
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const { isLoading, error, message } = useSelector((state) => state.plans);
   const { isAuthenticated } = useSelector((state) => state.auth);
+  const { allexchange } = useSelector((state) => state.bots); // 👈 get exchanges
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,29 +30,30 @@ export const AddPlan = () => {
       description: planDescription,
       price: planPrice,
       duration: planDuration,
-      // isPromoChecked,
       features,
+      exchange: selectedExchange, // 👈 include exchange
     };
     dispatch(createplan(values));
   };
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      navigate("/");
-    }
+    if (!isAuthenticated) navigate("/");
   }, [isAuthenticated, navigate]);
 
   useEffect(() => {
+    dispatch(fetchAllExchange()); // 👈 fetch exchanges
+  }, [dispatch]);
+
+  useEffect(() => {
     if (message) {
-      console.log(message);
       toast.success(message);
-      dispatch(clearMessage())
+      dispatch(clearMessage());
     }
     if (error) {
       toast.error(error);
-      dispatch(clearError())
+      dispatch(clearError());
     }
-  }, [error, message,clearMessage,clearError]);
+  }, [error, message, dispatch]);
 
   return (
     <DashboardLayout>
@@ -62,9 +68,7 @@ export const AddPlan = () => {
               <div className="row">
                 <div className="col-xl-4 col-sm-6">
                   <div className="input_spc">
-                    <label htmlFor="" className="mb-2 text-white">
-                      Plan Name*
-                    </label>
+                    <label className="mb-2 text-white">Plan Name*</label>
                     <input
                       type="text"
                       className="input_box w-100"
@@ -74,9 +78,7 @@ export const AddPlan = () => {
                     />
                   </div>
                   <div className="input_spc">
-                    <label htmlFor="" className="mb-2 text-white">
-                      Plan Description*
-                    </label>
+                    <label className="mb-2 text-white">Plan Description*</label>
                     <textarea
                       className="w-100"
                       rows="4"
@@ -86,9 +88,7 @@ export const AddPlan = () => {
                     ></textarea>
                   </div>
                   <div className="input_spc">
-                    <label htmlFor="" className="mb-2 text-white">
-                      Plan Price*
-                    </label>
+                    <label className="mb-2 text-white">Plan Price*</label>
                     <input
                       type="text"
                       className="input_box w-100"
@@ -98,9 +98,7 @@ export const AddPlan = () => {
                     />
                   </div>
                   <div className="input_spc">
-                    <label htmlFor="" className="mb-2 text-white">
-                      Plan Duration*
-                    </label>
+                    <label className="mb-2 text-white">Plan Duration*</label>
                     <select
                       className="form-select"
                       value={planDuration}
@@ -109,6 +107,21 @@ export const AddPlan = () => {
                       <option value={1}>Monthly</option>
                       <option value={3}>Quarterly</option>
                       <option value={12}>Yearly</option>
+                    </select>
+                  </div>
+                  <div className="input_spc">
+                    <label className="mb-2 text-white">Select Exchange*</label>
+                    <select
+                      className="form-select"
+                      value={selectedExchange}
+                      onChange={(e) => setSelectedExchange(e.target.value)}
+                    >
+                      <option value="">Select an Exchange</option>
+                      {allexchange?.map((exchange) => (
+                        <option key={exchange.id} value={exchange.id}>
+                          {exchange.name}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="d-flex align-items-center gap-2 mb-3 mb-sm-0">

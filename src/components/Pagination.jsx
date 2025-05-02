@@ -78,7 +78,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     <div className="pagination-container ">
      
       <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-between">
-        <span> Showing 1-10 of 100 results</span>
+        <span> Showing 1-{totalPages} of {totalPages} results</span>
       <div>
       <button
         onClick={() => onPageChange(currentPage - 1)}

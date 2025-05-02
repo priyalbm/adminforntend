@@ -14,6 +14,7 @@ export const UserManagement = () => {
   const dispatch = useDispatch();
   
   const { allusers, isLoading, count } = useSelector((state) => state.users);
+  console.log(count);
   
   const limit = 10; 
   
@@ -74,7 +75,7 @@ export const UserManagement = () => {
                         <tr key={i}>
                           <td>{(currentSearchPage - 1) * limit + i + 1}</td> {/* Adjust the row number based on pagination */}
                           <td>
-                            <Link to="/user-detail" className="blu">
+                            <Link to={`/user-detail/${data?.id}`} className="blu">
                               {data?.username}
                             </Link>
                           </td>
@@ -115,7 +116,7 @@ export const UserManagement = () => {
                         }
                       />
                     </div>
-                  </div>
+                  </div>  
                 </div>
               </div>
             </div>

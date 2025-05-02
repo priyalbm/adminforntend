@@ -5,7 +5,7 @@ export const loginUser = createAsyncThunk(
   'auth/login',
   async (values, { rejectWithValue }) => {
     try {
-      const response = await fetch(`${baseUrl}/api/auth/login/`, {
+      const response = await fetch(`${baseUrl}/api/auth/admin-login/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),
@@ -20,6 +20,7 @@ export const loginUser = createAsyncThunk(
       
       localStorage.setItem('token', data.access);
       localStorage.setItem('refreshToken', data.refresh);
+      console.log(data.user);
       
       return { user: data.user, access: data.access , refreshToken: data.refresh};
     } catch (error) {
@@ -401,7 +402,7 @@ const authSlice = createSlice({
         state.refreshToken = null;
         state.isAuthenticated = false;
         state.error = null;
-        state.message = 'Logged out successfully';
+        state.message = null;
       })
       .addCase(logoutUser.rejected, (state) => {
         state.isLoading = false;

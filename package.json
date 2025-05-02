@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.6.1",
+    "@reduxjs/toolkit": "^2.7.0",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.3",
@@ -24,6 +24,8 @@
     "react-router-dom": "^6.23.1",
     "react-toastify": "^11.0.5",
     "recharts": "^2.15.1",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
     "sass": "^1.77.2",
     "swiper": "^11.2.6",
     "yup": "^1.6.1"

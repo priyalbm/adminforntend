@@ -11,7 +11,7 @@ import { fetchUserProfile} from "../redux/authSlice";
 const Navbarnew = ({ active, setActive }) => {
   const dispatch=useDispatch()
   const { user ,isAuthenticated }= useSelector((state)=>state.auth)
-
+  
   useEffect(() => {
     if (isAuthenticated) {
       dispatch(fetchUserProfile());

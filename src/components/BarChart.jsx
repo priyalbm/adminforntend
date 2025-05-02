@@ -1,27 +1,28 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
-const data = [
-  { name: "Mon", value: 150 },
-  { name: "Tue", value: 300 },
-  { name: "Wed", value: 450 },
-  { name: "Thurs", value: 250 },
-  { name: "Fri", value: 180 },
-  { name: "Sat", value: 400 },
-  { name: "Sun", value: 120 },
-];
 
-const Barchart = () => {
+const Barchart = ({barData}) => {
+  const data = [
+    { name: "Mon", value: 150 },
+    { name: "Tue", value: 300 },
+    { name: "Wed", value: 450 },
+    { name: "Thurs", value: 250 },
+    { name: "Fri", value: 180 },
+    { name: "Sat", value: 400 },
+    { name: "Sun", value: 120 },
+  ];
+  
   return (
     <ResponsiveContainer width="100%" height={210}>
       <BarChart
-        data={data}
+        data={barData}
         barSize={25}
         barCategoryGap={30}
         margin={{ left: 0, right: 0, top: -20, bottom: -10 }}
       >
         <XAxis
-          dataKey="name"
+          dataKey="date"
           stroke="#626262"
           axisLine={true}
           tick={{ fontSize: 10, fill: "#626262" }}
@@ -37,9 +38,9 @@ const Barchart = () => {
           width={35}
         />
         <Tooltip cursor={{ fill: "transparent" }} />
-        <Bar dataKey="value" radius={[20, 20, 20, 20]}>
-          {data.map((entry, index) => (
-            <Cell key={index} fill={entry.name === "Wed" ? "#017BEC" : "rgb(255 255 255 / 8%)"} />
+        <Bar dataKey="total" radius={[20, 20, 20, 20]}>
+          {barData?.map((entry, index) => (
+            <Cell key={index} fill="#017BEC" />
           ))}
         </Bar>
       </BarChart>

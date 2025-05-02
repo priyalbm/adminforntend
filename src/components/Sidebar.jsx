@@ -23,6 +23,13 @@ const listData = [
     menu: "main_menu",
   },
   {
+    link: "/exchange-management",
+    tip: "Exchannge Management",
+    img: "s3",
+    head: "Exchannge Management",
+    menu: "main_menu",
+  },
+  {
     link: "/bot-management",
     tip: "Bots Management",
     img: "s3",
@@ -60,11 +67,11 @@ const listData = [
         tip: "Bot Execution Logs",
         head: "Bot Execution Logs",
       },
-      {
-        link: "/admin-activity",
-        tip: "Admin Activity Logs",
-        head: "Admin Activity Logs",
-      },
+      // {
+      //   link: "/admin-activity",
+      //   tip: "Admin Activity Logs",
+      //   head: "Admin Activity Logs",
+      // },
     ],
   },
   {
@@ -96,18 +103,18 @@ const Sidebarnew = ({ active, setActive }) => {
     const {isAuthenticated }= useSelector((state)=>state.auth)
   
 
-const getData = async () => {
-  const res = await api.get('/api/some-protected-route/');
-  console.log(res.data);
-};
+// const getData = async () => {
+//   const res = await api.get('/api/some-protected-route/');
+//   console.log(res.data);
+// };
 
 
-    useEffect(()=>{
-      getData()
-      if (!isAuthenticated) {
-        navigate("/");
-      }
-    },[isAuthenticated])
+//     useEffect(()=>{
+//       getData()
+//       if (!isAuthenticated) {
+//         navigate("/");
+//       }
+//     },[isAuthenticated])
   
   const { pathname } = useLocation();
   const launchPadPath =

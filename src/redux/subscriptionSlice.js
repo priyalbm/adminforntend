@@ -31,13 +31,15 @@ export const createSubscription = createAsyncThunk(
 
 export const fetchAllSubscription = createAsyncThunk(
   'subscription/fetchAllSubscription',
-  async ({ page, limit, searchQuery }, { rejectWithValue, getState }) => {
+  async ({ page, limit, searchQuery ,user_id}, { rejectWithValue, getState }) => {
+    console.log(page, limit, searchQuery ,user_id);
+    
     try {
       const token = getState().auth.token || localStorage.getItem('token');
       if (!token) {
         return rejectWithValue('No authentication token');
       }
-      const response = await fetch(`${baseUrl}/api/subscriptions/?page=${page}&page_size=${limit}&search=${searchQuery}`, {
+      const response = await fetch(`${baseUrl}/api/subscriptions/?page=${page}&page_size=${limit}&search=${searchQuery}&user_id=${user_id}`, {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json' ,

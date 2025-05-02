@@ -1,12 +1,15 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 
-const data = [
-  { name: "Poloniex", value: 900, fill: "#F75E47" },
-  { name: "Pionex", value: 1000, fill: "#18AD8B" },
-  { name: "Coinstore", value: 2000, fill: "#017BEC" },
-];
 
+const DashboardChart = ({botdata}) => {
+  const data = [
+    { name: botdata?.[0]?.exchange__name, value: botdata?.[0]?.count, fill: "#F75E47" },
+    { name: botdata?.[1]?.exchange__name, value: botdata?.[1]?.count, fill: "#18AD8B" },
+    { name: botdata?.[2]?.exchange__name, value: botdata?.[2]?.count, fill: "#017BEC" },
+  ];
+  console.log(data);
+  
 const CustomLegend = () => {
   return (
     <div
@@ -55,7 +58,7 @@ const CustomLegend = () => {
                   color: "#fff",
                 }}
               >
-                ${entry.value.toLocaleString()}
+                {entry.value}
               </p>
             </div>
           </div>
@@ -65,7 +68,6 @@ const CustomLegend = () => {
   );
 };
 
-const DashboardChart = () => {
   return (
     <div
       className="pie_data"

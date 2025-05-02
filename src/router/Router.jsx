@@ -20,6 +20,8 @@ import { ProfileSetting } from "../pages/ProfileSetting";
 import { Profile } from "../pages/Profile";
 import { SupportChat } from "../pages/SupportChat";
 import { Notification } from "../pages/Notification";
+import { Exchanges } from "../pages/Exchange";
+import { AddExchange } from "../pages/AddExchange";
 
 export default function AppRoutes() {
   const routes = [
@@ -62,6 +64,10 @@ export default function AppRoutes() {
       name: "UserDetail",
       path: "/user-detail/:id",
       Component: UserDetail,
+    },{
+      name: "ExchangeManagement",
+      path: "/exchange-management",
+      Component: Exchanges,
     },
     {
       name: "BotsManagement",
@@ -82,6 +88,11 @@ export default function AppRoutes() {
       name: "AddPlan",
       path: "/add-plan",
       Component: AddPlan,
+    },
+    {
+      name: "AddExchange",
+      path: "/add-exchange",
+      Component: AddExchange,
     },
     {
       name: "BotExecution",
